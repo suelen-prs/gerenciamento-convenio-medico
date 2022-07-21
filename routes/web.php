@@ -11,9 +11,9 @@
 |
 */
 
-/* Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-})->name('home'); */
+})->name('home');
 
 
 /* Route::group(['middleware' => ['auth']], function(){ */
