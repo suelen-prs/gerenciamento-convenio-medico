@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('home'); */
 
 
-/* Route::group(['middleware' => ['auth']], function(){ */
+Route::group(['middleware' => ['auth']], function(){
     Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function(){
 
         Route::resource('cidades', CidadeController::class)->except(['show']);
@@ -90,12 +90,12 @@ Route::get('/', function () {
         }); */
 
     });
-/* }); */
+});
 
 
 
 
-/* Auth::routes(); */
+Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
