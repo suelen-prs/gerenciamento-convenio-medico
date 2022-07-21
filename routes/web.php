@@ -16,7 +16,7 @@
 })->name('home'); */
 
 
-Route::group(['middleware' => ['auth']], function(){
+/* Route::group(['middleware' => ['auth']], function(){ */
     Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function(){
 
         Route::resource('cidades', CidadeController::class)->except(['show']);
@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth']], function(){
         }); */
 
     });
-});
+/* }); */
 
 
 
