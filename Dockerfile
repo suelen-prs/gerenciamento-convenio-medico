@@ -10,6 +10,10 @@
 #RUN chown -R www-data:www-data /app a2enmod rewrite
 
 FROM php:7.2.28-apache
+WORKDIR /app
+COPY . /app
+EXPOSE 80
+COPY --from=build /app /app
 RUN apk add --no-cache \
         zip \
         libzip-dev \
