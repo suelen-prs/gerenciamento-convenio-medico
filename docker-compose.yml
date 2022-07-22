@@ -1,0 +1,35 @@
+services:
+
+  #PHP Service
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - 'db'
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www/html/
+    networks:
+      - app-network
+
+  #MySQL Service
+  db:
+    image: mysql:8.0.29
+    container_name: db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: descont_saude
+      MYSQL_ROOT_PASSWORD: 123456
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
