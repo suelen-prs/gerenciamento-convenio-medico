@@ -4,7 +4,7 @@ services:
     image: mysql:8.0.29
     container_name: db
     ports:
-      - "3306:5432"
+      - "3306:5056"
     environment:
       MYSQL_DATABASE: descont_saude
       MYSQL_ROOT_PASSWORD: 123456
